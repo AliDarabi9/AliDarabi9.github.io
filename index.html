@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ali Darabi - CV</title>
+    <title>Ali Darabi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ali Darabi - B.Sc. Computer Engineering student at the University of Tehran. Machine learning, NLP, stance detection, and large language models.">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -12,222 +13,623 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
+            margin: 0;
             font-family: 'Montserrat', sans-serif;
-            margin: 0 auto;
-            max-width: 900px;
-            padding: 30px;
             line-height: 1.6;
-            color: #000;
+            color: #0f172a;
+            background: #f3f4f6;
         }
-        h1, h2 {
-            border-bottom: 2px solid #000;
-            padding-bottom: 5px;
-        }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-        .contact {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 15px;
-        }
-        .contact a {
-            color: black;
+
+        a {
+            color: #2563eb;
             text-decoration: none;
         }
-        section {
-            margin-top: 35px;
+
+        a:hover {
+            text-decoration: underline;
         }
-        ul {
-            margin-top: 5px;
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
+
+        /* Header / navigation */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            gap: 16px;
+        }
+
+        .site-title a {
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            color: #111827;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            color: #4b5563;
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0;
+            background: #2563eb;
+            transition: width 0.2s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero / welcome */
+        .hero {
+            padding: 56px 0 40px;
+        }
+
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            flex: 1 1 280px;
+        }
+
+        .hero-kicker {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-bottom: 4px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin: 0 0 12px;
+            color: #111827;
+        }
+
+        .hero-lead {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 18px 0 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            border-color: #1d4ed8;
+            text-decoration: none;
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: #111827;
+            border-color: #d1d5db;
+        }
+
+        .btn-secondary:hover {
+            background: #f3f4f6;
+            text-decoration: none;
+        }
+
+        .hero-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .hero-links a {
+            color: #374151;
+        }
+
+        .hero-photo {
+            flex: 0 0 200px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 999px;
+            overflow: hidden;
+            border: 3px solid #e5e7eb;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+            background: #e5e7eb;
+        }
+
+        .photo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* CV section */
+        .cv-section {
+            padding: 24px 0 40px;
+        }
+
+        .cv-section h2 {
+            font-size: 1.4rem;
+            border-bottom: 2px solid #000;
+            padding-bottom: 4px;
+            margin-bottom: 0.75rem;
+        }
+
+        .cv-note {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-top: -4px;
+            margin-bottom: 16px;
+        }
+
+        .cv-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px 20px 28px;
+            box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        .cv-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .cv-name {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .cv-contact {
+            font-size: 0.9rem;
+        }
+
+        .cv-contact a {
+            color: #111827;
+        }
+
+        .cv-card h3 {
+            border-bottom: 2px solid #000;
+            padding-bottom: 4px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+
+        .cv-card section:first-of-type h3 {
+            margin-top: 0;
+        }
+
+        .cv-card p {
+            margin: 4px 0;
+        }
+
+        .cv-card ul {
+            margin: 6px 0 0 18px;
+            padding: 0;
+        }
+
         .two-col {
             display: flex;
             justify-content: space-between;
+            gap: 12px;
             font-weight: bold;
+            margin-top: 8px;
         }
+
         .item-title {
             font-weight: bold;
         }
+
         .highlight ul {
             margin-top: 5px;
         }
-        .small-gap { margin-top: 8px; }
+
+        .small-gap {
+            margin-top: 8px;
+        }
+
+        /* Contact section at bottom */
+        .contact-section {
+            padding: 24px 0 40px;
+        }
+
+        .contact-section h2 {
+            font-size: 1.4rem;
+            border-bottom: 2px solid #000;
+            padding-bottom: 4px;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-section p {
+            margin-bottom: 12px;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 6px;
+        }
+
+        /* Footer */
+        .site-footer {
+            border-top: 1px solid #e5e7eb;
+            padding: 16px 0 20px;
+            font-size: 0.8rem;
+            color: #6b7280;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 720px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero {
+                padding-top: 32px;
+            }
+
+            .hero-inner {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+            }
+
+            .hero-photo {
+                align-self: center;
+            }
+
+            .cv-card {
+                padding: 20px 16px 24px;
+            }
+
+            .two-col {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-<h1>Ali Darabi</h1>
-
-<div class="contact">
-    College of Engineering, University of Tehran, Tehran, Iran &nbsp; | &nbsp;
-    <i class="fa fa-envelope"></i> <a href="mailto:ali.darabi.ut@gmail.com">ali.darabi.ut@gmail.com</a> &nbsp; | &nbsp;
-    <i class="fa fa-phone"></i> <a href="tel:+989125044442">+98 (912) 504-4442</a> &nbsp; | &nbsp;
-    <i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/ali--darabi">linkedin.com/in/ali--darabi</a> &nbsp; | &nbsp;
-    <i class="fab fa-github"></i> <a href="https://github.com/AliDarabi9">github.com/AliDarabi9</a>
-</div>
-
-<!-- EDUCATION -->
-<section>
-    <h2>Education</h2>
-
-    <div class="two-col">
-        <div><span class="item-title">University of Tehran</span>, B.Sc. in Computer Engineering — Tehran, Iran</div>
-        <div>Expected: Jun 2026</div>
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="site-title">
+            <a href="#home">Ali Darabi</a>
+        </div>
+        <nav class="nav-links">
+            <a href="#home">About</a>
+            <a href="#cv">CV</a>
+            <a href="#cv-projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </div>
+</header>
 
-    <div class="highlight small-gap">
-        <ul>
-            <li>GPA: 18.91/20 <strong>(4/4)</strong></li>
-        </ul>
+<main>
+    <!-- Welcome / About -->
+    <section id="home" class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <p class="hero-kicker">B.Sc. Computer Engineering · University of Tehran</p>
+                <h1>Hi, I'm Ali.</h1>
+                <p class="hero-lead">
+                    I'm an undergraduate computer engineering student at the College of Engineering, University of Tehran (expected Jun 2026), interested in machine learning, deep learning, natural language processing, stance detection, and large language models.
+                </p>
+                <p>
+                    I'm currently working on my bachelor's thesis on <em>Labeling the Stance of Bluesky Platform Users with User Graph Network Processing</em>, supervised by Dr. Azade Shakery and Peyman Rostami. I also enjoy teaching and have served as a teaching assistant for several core CS courses including Database Design, Compiler Design and Programming Languages, Computer Networks, Computer Vision, and more.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#cv" class="btn btn-primary">
+                        <i class="fa-regular fa-file-lines"></i> View my CV
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fa-regular fa-envelope"></i> Get in touch
+                    </a>
+                </div>
+
+                <div class="hero-links">
+                    <a href="mailto:ali.darabi.ut@gmail.com"><i class="fa-regular fa-envelope"></i> ali.darabi.ut@gmail.com</a>
+                    <span>·</span>
+                    <a href="https://linkedin.com/in/ali--darabi" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <span>·</span>
+                    <a href="https://github.com/AliDarabi9" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-photo">
+                <div class="photo-circle">
+                    <!-- Replace the src below with the actual path to your photo -->
+                    <img src="ali-darabi.jpg" alt="Photo of Ali Darabi">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV -->
+    <section id="cv" class="cv-section">
+        <div class="container">
+            <h2>Curriculum Vitae</h2>
+            <p class="cv-note">This section mirrors my current CV.</p>
+
+            <div class="cv-card">
+                <div class="cv-header">
+                    <div class="cv-name">Ali Darabi</div>
+                    <div class="cv-contact">
+                        College of Engineering, University of Tehran, Tehran, Iran &nbsp; | &nbsp;
+                        <i class="fa fa-envelope"></i> <a href="mailto:ali.darabi.ut@gmail.com">ali.darabi.ut@gmail.com</a> &nbsp; | &nbsp;
+                        <i class="fa fa-phone"></i> <a href="tel:+989125044442">+98 (912) 504-4442</a> &nbsp; | &nbsp;
+                        <i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/ali--darabi">linkedin.com/in/ali--darabi</a> &nbsp; | &nbsp;
+                        <i class="fab fa-github"></i> <a href="https://github.com/AliDarabi9">github.com/AliDarabi9</a>
+                    </div>
+                </div>
+
+                <!-- EDUCATION -->
+                <section class="cv-block">
+                    <h3>Education</h3>
+
+                    <div class="two-col">
+                        <div><span class="item-title">University of Tehran</span>, B.Sc. in Computer Engineering — Tehran, Iran</div>
+                        <div>Expected: Jun 2026</div>
+                    </div>
+
+                    <div class="highlight small-gap">
+                        <ul>
+                            <li>GPA: 18.91/20 <strong>(4/4)</strong></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- RESEARCH INTERESTS -->
+                <section class="cv-block">
+                    <h3>Research Interests</h3>
+                    <p>
+                        Machine Learning | Deep Learning | Natural Language Processing | Stance Detection | Large Language Models
+                    </p>
+                </section>
+
+                <!-- EXPERIENCE -->
+                <section class="cv-block">
+                    <h3>Experience</h3>
+
+                    <!-- Bachelor's Thesis -->
+                    <div class="two-col">
+                        <div class="item-title">Bachelor's Thesis / Research Assistant, University of Tehran</div>
+                        <div>Ongoing</div>
+                    </div>
+
+                    <div class="highlight small-gap">
+                        <ul>
+                            <li>Supervisors: Dr. Azade Shakery and Peyman Rostami</li>
+                            <li>Thesis: <em>Labeling the Stance of Bluesky Platform Users with User Graph Network Processing</em></li>
+                            <li>Working on <em>POLITISKY24: U.S. Political Bluesky Dataset with User Stance Labels</em> (Findings of EMNLP 2025, <a href="https://www.arxiv.org/abs/2506.07606">arXiv:2506.07606</a>)</li>
+                            <li>Aiming to publish a paper based on this thesis in a well-known conference</li>
+                        </ul>
+                    </div>
+
+                    <br>
+
+                    <!-- TA Experience -->
+                    <div class="two-col">
+                        <div class="item-title">Teaching Assistant, University of Tehran</div>
+                        <div>Spring 2024 – Fall 2025</div>
+                    </div>
+
+                    <div class="highlight small-gap">
+                        <ul>
+                            <li>Database Design</li>
+                            <li>Compiler Design and Programming Languages</li>
+                            <li>Computer Networks</li>
+                            <li>Computer Networks Security</li>
+                            <li>Computer Vision</li>
+                            <li>Software Testing</li>
+                            <li>Computer Aided Digital System</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- TECHNICAL SKILLS -->
+                <section class="cv-block">
+                    <h3>Technical Skills</h3>
+
+                    <p><strong>Languages:</strong> Python, C/C++, Java, Go, Matlab, SQL, Verilog, R, ANTLR</p>
+                    <p><strong>Libraries:</strong> PyTorch, TensorFlow, Scikit-Learn, Pandas, OpenCV, NumPy, Gym, PySpark</p>
+                    <p><strong>Technologies:</strong> Git, Linux, Qt</p>
+                    <p><strong>Courses:</strong> Deep Learning | Artificial Intelligence | Data Science | Computer Vision | Algorithm Design | Distributed Systems | Computer Networks | Database Design | Software Testing | Cyber-Physical Systems</p>
+                </section>
+
+                <!-- CERTIFICATIONS -->
+                <section class="cv-block">
+                    <h3>Certifications and Awards</h3>
+                    <ul>
+                        <li><strong>National Astronomy and Astrophysics Olympiad</strong> – Bronze Medal (Top 40 nationwide)</li>
+                        <li>Ranked among the top 0.001% in the nationwide university entrance exam in Mathematics and Physics (2021)</li>
+                        <li>Ranked within the Top 5% among more than 120 B.Sc. Computer Engineering students at the University of Tehran</li>
+                    </ul>
+                </section>
+
+                <!-- LANGUAGE PROFICIENCY -->
+                <section class="cv-block">
+                    <h3>Language Proficiency</h3>
+
+                    <p><strong>English: IELTS Academic</strong></p>
+                    <p><em>Overall:</em> 8.0</p>
+                    <p><em>Listening:</em> 8.5, <em>Reading:</em> 9.0, <em>Speaking:</em> 7.5, <em>Writing:</em> 7.0 &nbsp; | &nbsp; <em>Proficiency Level:</em> C1</p>
+
+                    <br>
+                    <p><strong>Persian:</strong> Native Proficiency</p>
+                </section>
+
+                <!-- PROJECTS -->
+                <section id="cv-projects" class="cv-block">
+                    <h3>Selected Course Projects</h3>
+
+                    <!-- Data Science -->
+                    <div class="two-col">
+                        <div class="item-title">Data Science</div>
+                        <div><a href="https://github.com/AliDarabi9/Data-Science-Course-Projects"><i class="fab fa-github"></i> Github</a></div>
+                    </div>
+
+                    <div class="highlight small-gap">
+                        <ul>
+                            <li>Exploratory data analysis of the Beijing real estate market using Python</li>
+                            <li>Implemented a multivariate regression model from scratch</li>
+                            <li>Processed large-scale datasets using PySpark for distributed data operations</li>
+                        </ul>
+                    </div>
+
+                    <br>
+
+                    <!-- AI -->
+                    <div class="two-col">
+                        <div class="item-title">Artificial Intelligence</div>
+                        <div><a href="https://github.com/AliDarabi9/Artificial-Intelligence-Course-Projects"><i class="fab fa-github"></i> Github</a></div>
+                    </div>
+
+                    <div class="highlight small-gap">
+                        <ul>
+                            <li>Developed a Q-learning RL agent in Gym environments</li>
+                            <li>Implemented a CNN in PyTorch for image classification</li>
+                        </ul>
+                    </div>
+
+                    <br>
+
+                    <!-- Distributed Systems -->
+                    <div class="two-col">
+                        <div class="item-title">Distributed Systems</div>
+                        <div><a href="https://github.com/AliDarabi9/Distributed-Systems-Course-Projects"><i class="fab fa-github"></i> Github</a></div>
+                    </div>
+
+                    <div class="highlight small-gap">
+                        <ul>
+                            <li>Implemented Raft consensus and a sharded key-value store in Go</li>
+                            <li>Built a MapReduce framework and service suite in Go</li>
+                        </ul>
+                    </div>
+
+                    <br>
+
+                    <!-- Cyber-Physical Systems -->
+                    <div class="two-col">
+                        <div class="item-title">Cyber-Physical Systems — BEV Stitching System</div>
+                        <div><a href="https://github.com/AliDarabi9/CPS-FinalProject"><i class="fab fa-github"></i> Github</a></div>
+                    </div>
+
+                    <div class="highlight small-gap">
+                        <ul>
+                            <li>Developed a multi-variant BEV stitching system with Qt simulation and Raspberry Pi deployment</li>
+                        </ul>
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>If you'd like to talk about research, teaching, or projects, feel free to reach out.</p>
+            <ul class="contact-list">
+                <li><i class="fa fa-envelope"></i> <a href="mailto:ali.darabi.ut@gmail.com">ali.darabi.ut@gmail.com</a></li>
+                <li><i class="fa fa-phone"></i> <a href="tel:+989125044442">+98 (912) 504-4442</a></li>
+                <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/ali--darabi" target="_blank" rel="noopener">linkedin.com/in/ali--darabi</a></li>
+                <li><i class="fab fa-github"></i> <a href="https://github.com/AliDarabi9" target="_blank" rel="noopener">github.com/AliDarabi9</a></li>
+                <li><i class="fa fa-location-dot"></i> Tehran, Iran</li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <small>© <span id="year"></span> Ali Darabi</small>
     </div>
-</section>
+</footer>
 
-<!-- RESEARCH INTERESTS -->
-<section>
-    <h2>Research Interests</h2>
-    Machine Learning | Deep Learning | Natural Language Processing | Stance Detection | Large Language Models
-</section>
-
-<!-- EXPERIENCE -->
-<section>
-    <h2>Experience</h2>
-
-    <!-- Bachelor's Thesis -->
-    <div class="two-col">
-        <div class="item-title">Bachelor's Thesis / Research Assistant, University of Tehran</div>
-        <div>Ongoing</div>
-    </div>
-
-    <div class="highlight small-gap">
-        <ul>
-            <li>Supervisors: Dr. Azade Shakery and Peyman Rostami</li>
-            <li>Thesis: <em>Labeling the Stance of Bluesky Platform Users with User Graph Network Processing</em></li>
-            <li>Working on <em>POLITISKY24: U.S. Political Bluesky Dataset with User Stance Labels</em> (Findings of EMNLP 2025, <a href="https://www.arxiv.org/abs/2506.07606">arXiv:2506.07606</a>)</li>
-            <li>Aiming to publish a paper based on this thesis in a well-known conference</li>
-        </ul>
-    </div>
-
-    <br>
-
-    <!-- TA Experience -->
-    <div class="two-col">
-        <div class="item-title">Teaching Assistant, University of Tehran</div>
-        <div>Spring 2024 – Fall 2025</div>
-    </div>
-
-    <div class="highlight small-gap">
-        <ul>
-            <li>Database Design</li>
-            <li>Compiler Design and Programming Languages</li>
-            <li>Computer Networks</li>
-            <li>Computer Networks Security</li>
-            <li>Computer Vision</li>
-            <li>Software Testing</li>
-            <li>Computer Aided Digital System</li>
-        </ul>
-    </div>
-</section>
-
-<!-- TECHNICAL SKILLS -->
-<section>
-    <h2>Technical Skills</h2>
-
-    <p><strong>Languages:</strong> Python, C/C++, Java, Go, Matlab, SQL, Verilog, R, ANTLR</p>
-    <p><strong>Libraries:</strong> PyTorch, TensorFlow, Scikit-Learn, Pandas, OpenCV, NumPy, Gym, PySpark</p>
-    <p><strong>Technologies:</strong> Git, Linux, Qt</p>
-    <p><strong>Courses:</strong> Deep Learning | Artificial Intelligence | Data Science | Computer Vision | Algorithm Design | Distributed Systems | Computer Networks | Database Design | Software Testing | Cyber-Physical Systems</p>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section>
-    <h2>Certifications and Awards</h2>
-    <ul>
-        <li><strong>National Astronomy and Astrophysics Olympiad</strong> – Bronze Medal (Top 40 nationwide)</li>
-        <li>Ranked among the top 0.001% in the nationwide university entrance exam in Mathematics and Physics (2021)</li>
-        <li>Ranked within the Top 5% among more than 120 B.Sc. Computer Engineering students at the University of Tehran</li>
-    </ul>
-</section>
-
-<!-- LANGUAGE PROFICIENCY -->
-<section>
-    <h2>Language Proficiency</h2>
-
-    <p><strong>English: IELTS Academic</strong></p>
-    <p><em>Overall:</em> 8.0</p>
-    <p><em>Listening:</em> 8.5, <em>Reading:</em> 9.0, <em>Speaking:</em> 7.5, <em>Writing:</em> 7.0 &nbsp; | &nbsp; <em>Proficiency Level:</em> C1</p>
-
-    <br>
-    <p><strong>Persian:</strong> Native Proficiency</p>
-</section>
-
-<!-- PROJECTS -->
-<section>
-    <h2>Selected Course Projects</h2>
-
-    <!-- Data Science -->
-    <div class="two-col">
-        <div class="item-title">Data Science</div>
-        <div><a href="https://github.com/AliDarabi9/Data-Science-Course-Projects"><i class="fab fa-github"></i> Github</a></div>
-    </div>
-
-    <div class="highlight small-gap">
-        <ul>
-            <li>Exploratory data analysis of the Beijing real estate market using Python</li>
-            <li>Implemented a multivariate regression model from scratch</li>
-            <li>Processed large-scale datasets using PySpark for distributed data operations</li>
-        </ul>
-    </div>
-
-    <br>
-
-    <!-- AI -->
-    <div class="two-col">
-        <div class="item-title">Artificial Intelligence</div>
-        <div><a href="https://github.com/AliDarabi9/Artificial-Intelligence-Course-Projects"><i class="fab fa-github"></i> Github</a></div>
-    </div>
-
-    <div class="highlight small-gap">
-        <ul>
-            <li>Developed a Q-learning RL agent in Gym environments</li>
-            <li>Implemented a CNN in PyTorch for image classification</li>
-        </ul>
-    </div>
-
-    <br>
-
-    <!-- Distributed Systems -->
-    <div class="two-col">
-        <div class="item-title">Distributed Systems</div>
-        <div><a href="https://github.com/AliDarabi9/Distributed-Systems-Course-Projects"><i class="fab fa-github"></i> Github</a></div>
-    </div>
-
-    <div class="highlight small-gap">
-        <ul>
-            <li>Implemented Raft consensus and a sharded key-value store in Go</li>
-            <li>Built a MapReduce framework and service suite in Go</li>
-        </ul>
-    </div>
-
-    <br>
-
-    <!-- Cyber-Physical Systems -->
-    <div class="two-col">
-        <div class="item-title">Cyber-Physical Systems — BEV Stitching System</div>
-        <div><a href="https://github.com/AliDarabi9/CPS-FinalProject"><i class="fab fa-github"></i> Github</a></div>
-    </div>
-
-    <div class="highlight small-gap">
-        <ul>
-            <li>Developed a multi-variant BEV stitching system with Qt simulation and Raspberry Pi deployment</li>
-        </ul>
-    </div>
-
-</section>
+<script>
+    // Update year in footer automatically
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+</script>
 
 </body>
 </html>
